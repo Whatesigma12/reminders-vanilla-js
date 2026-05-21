@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Напоминания JS Vanilla</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="app">
+        <section class="hero">
+            <p class="eyebrow">Vanilla JavaScript</p>
+            <h1>Напоминания js vanilla</h1>
+            <p class="subtitle">Менеджер задач с темами, датами, подзадачами, поиском, фильтрами и сохранением в LocalStorage.</p>
+        </section>
+
+        <section class="panel task-form">
+            <div class="field field-wide">
+                <label for="taskInput">Задача</label>
+                <input type="text" id="taskInput" placeholder="Например: подготовить отчет по практике">
+            </div>
+
+            <div class="field">
+                <label for="topicInput">Тема</label>
+                <input type="text" id="topicInput" placeholder="Учеба, дом, работа...">
+            </div>
+
+            <div class="field">
+                <label for="dateInput">Дата события</label>
+                <input type="date" id="dateInput">
+            </div>
+
+            <div class="field">
+                <label for="prioritySelect">Приоритет</label>
+                <select id="prioritySelect">
+                    <option value="Низкий">Низкий</option>
+                    <option value="Средний">Средний</option>
+                    <option value="Высокий">Высокий</option>
+                </select>
+            </div>
+
+            <div class="field field-wide">
+                <label for="subtasksInput">Подзадачи</label>
+                <input type="text" id="subtasksInput" placeholder="Через запятую: найти источники, написать текст, проверить оформление">
+            </div>
+
+            <button id="addBtn" class="primary-btn">Добавить напоминание</button>
+        </section>
+
+        <section class="panel toolbar">
+            <div class="field field-wide">
+                <label for="searchInput">Поиск</label>
+                <input type="text" id="searchInput" placeholder="Искать по задаче, теме или подзадачам...">
+            </div>
+
+            <div class="field">
+                <label for="filterSelect">Статус</label>
+                <select id="filterSelect">
+                    <option value="all">Все</option>
+                    <option value="active">Активные</option>
+                    <option value="completed">Выполненные</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="priorityFilter">Приоритет</label>
+                <select id="priorityFilter">
+                    <option value="all">Любой</option>
+                    <option value="Низкий">Низкий</option>
+                    <option value="Средний">Средний</option>
+                    <option value="Высокий">Высокий</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <span id="taskCount">0</span>
+                <p>всего</p>
+            </div>
+            <div class="stat-card">
+                <span id="activeCount">0</span>
+                <p>активных</p>
+            </div>
+            <div class="stat-card">
+                <span id="completedCount">0</span>
+                <p>выполнено</p>
+            </div>
+        </section>
+
+        <ul id="taskList" class="task-list"></ul>
+
+        <p id="emptyMessage" class="empty-message">Пока нет напоминаний. Добавьте первое событие выше.</p>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
